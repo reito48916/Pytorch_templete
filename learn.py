@@ -8,6 +8,10 @@ import model
 
 import numpy as np
 
+#csvからデータをとる場合
+import pandas as pd
+from sklearn import svm
+
 
 #定数宣言
 gpu_number = 0
@@ -23,6 +27,10 @@ x_train_np = np.random.randn(train_num,x_dim)
 y_train_np = np.zeros(train_num)
 for i in range(train_num):
     y_train_np[i] = np.sum(x_train_np[i])/100.0
+
+#csvからデータを取得する例
+x_train_read = np.array(pd.read_csv("x_train.csv",header=None))
+y_train_read = np.array(pd.read_csv("y_train.csv",header=None))
 
 
 #numpy配列をpytorchで扱うtensorに変換

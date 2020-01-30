@@ -40,6 +40,7 @@ if gpu_available:
 data_num = x_test.size()[0]
 total_loss = 0.0
 criterion = nn.MSELoss()
+#criterion = nn.CrossEntropyLoss()
 for i in range(data_num):
     inputs = x_test[i].view(1,-1)
     teacher = y_test[i].view(1,-1)
